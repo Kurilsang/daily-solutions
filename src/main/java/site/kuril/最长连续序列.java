@@ -10,12 +10,21 @@ public class 最长连续序列 {
 }
 class Solution3 {
     public int longestConsecutive(int[] nums) {
+
+
         int count = 0;
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
             set.add(num);
         }
+
+
+
         for(Integer num : set) {
+            if (set.contains(num - 1)) {
+                continue;
+            }
+
             int tCount = 1;
             int start = num;
             int end = num+1;
